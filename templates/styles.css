@@ -1,0 +1,14 @@
+.homehead{
+    text-align : center;
+    position: fixed;
+    width: -webkit-fill-available;
+    color: navajowhite;
+}
+.homefoot{
+    bottom : 0px;
+    padding-right: 20px;
+    text-align : right;
+    position : fixed;
+    width: -webkit-fill-available;
+    color : blueviolet;
+}
