@@ -1,6 +1,6 @@
 .homehead{
     text-align : center;
-    position: fixed;
+    position: relative;
     width: -webkit-fill-available;
     color: navajowhite;
 }
@@ -8,7 +8,12 @@
     bottom : 0px;
     padding-right: 20px;
     text-align : right;
-    position : fixed;
+    position : absolute;
     width: -webkit-fill-available;
     color : blueviolet;
+}
+.homemain{
+    position : relative;
+    text-align :center;
+    width : 100%;
 }
