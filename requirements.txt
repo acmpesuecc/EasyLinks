@@ -2,3 +2,4 @@ fastapi
 redis
 jinja2
 aiofiles
+dotenv
