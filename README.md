@@ -1,10 +1,13 @@
 # EasyLinks
 
-## description
- A fast as hell link redirecting service / shortening service.
- This project has complete intention to be hosted and server millions of peopl.
- With millions of link mappings come a problem , SEARCH IS SLOW , Introducing : Redis.This project uses FastAPI and Redis and is specifically built for speed.
+## Description
+ A fast link redirecting service/shortening service.
+ This project has complete intention to be hosted and serve millions of people.
+ With millions of link mappings comes a problem, THE SEARCH IS SLOW . 
  
- ## Getting started
+ ## Introducing...
+ Redis! 
+ This project uses FastAPI, Redis, and is specifically built for speed.
  
- I dont want pull requests coming in that break the whole system. So please test your changes before pr.
+ ## Getting Started
+ Do not send please Pull Requests that break the whole system. Please test before sending.
