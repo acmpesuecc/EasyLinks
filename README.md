@@ -3,7 +3,7 @@
 ## Description
  A fast link redirecting service/shortening service.
  This project has complete intention to be hosted and serve millions of people.
- With millions of link mappings comes a problem , THE SEARCH IS SLOW . 
+ With millions of link mappings comes a problem, THE SEARCH IS SLOW . 
  
  ## Introducing...
  Redis! 
