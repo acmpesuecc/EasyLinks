@@ -32,6 +32,10 @@ def index(request:Request):
 # def redirect(key : str):
     # if(key=="g"):
         # return RedirectResponse("https://www.google.com")
+        
+Allowed_domain=["google.com", "stackoverflow.com"]
+        
+
 @app.get("/r/{key}", response_class=RedirectResponse, status_code=302)
 async def redirect_short_links(key : str):
     start=time.time()*1000
@@ -43,8 +47,20 @@ async def redirect_short_links(key : str):
         end=time.time()*1000
         print("Total redirect time : ",end-start)
         return link.decode('ascii')
+        if link:
+            url = link.decode('ascii')
+            domain = urlparse(url).hostname.split(".")[-2] + "." + urlparse(url).hostname.split(".")[-1]
+            if domain in Allowed_domain:
+                if urlparse(url).scheme == "https":
+                    return url
+                else:
+                    return "This website does not use HTTPS"
+            else:
+                return "This website is blocked"
+        else:
+            return "Invalid entry"
 
 
 if __name__ == "__main__":
     tot_webhits = 0
-    uvicorn.run(app, host='0.0.0.0', port=8080, debug=True)
+    uvicorn.run(app, host='0.0.0.0', port=8080, log_level="debug")
