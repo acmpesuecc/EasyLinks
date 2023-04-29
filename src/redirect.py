@@ -33,7 +33,9 @@ def index(request:Request):
     # if(key=="g"):
         # return RedirectResponse("https://www.google.com")
         
-Allowed_domain=["google.com", "stackoverflow.com"]
+f=open("whitelist.txt",'r')
+Allowed_domains=f.readlines()
+f.close()
         
 
 @app.get("/r/{key}", response_class=RedirectResponse, status_code=302)
@@ -50,7 +52,7 @@ async def redirect_short_links(key : str):
         if link:
             url = link.decode('ascii')
             domain = urlparse(url).hostname.split(".")[-2] + "." + urlparse(url).hostname.split(".")[-1]
-            if domain in Allowed_domain:
+            if domain in Allowed_domains:
                 if urlparse(url).scheme == "https":
                     return url
                 else:
